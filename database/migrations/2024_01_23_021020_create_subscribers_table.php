@@ -13,7 +13,10 @@ return new class extends Migration
     {
         Schema::create('subscribers', function (Blueprint $table) {
             $table->id();
-            $table->string('list_name')->unique();
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->string('gender', 20 );
+            $table->foreignId('mailinglist_id');
             $table->timestamps();
         });
     }
