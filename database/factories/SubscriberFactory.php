@@ -24,7 +24,7 @@ class SubscriberFactory extends Factory
             'name' => $this->faker->name($gender),
             'email' => $this->faker->email(),
             'gender' => $gender,
-            'mailinglist_id' => $this->faker->numberBetween(1,5)  // let's create only 5 lists
+            'mailing_list_id' => $this->faker->numberBetween(1,5)  // let's create only 5 lists
         ];
     }
 }

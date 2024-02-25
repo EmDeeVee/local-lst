@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('gender', 20 );
-            $table->foreignId('mailinglist_id');
+            $table->foreignId('mailing_list_id');
             $table->timestamps();
         });
     }
