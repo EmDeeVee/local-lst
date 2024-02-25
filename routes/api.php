@@ -3,7 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\SubscribersController;
+use App\Http\Controllers\SubscriberController;
+use App\Http\Controllers\MailingListController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,10 +21,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/get/subscriber', ['SubscriberController::class', 'index']);
-Route::post('/post/subscriber', ['SubscriberController::class', 'store']);
-Route::delete('/delete/subscriber/{id}', ['SubscriberController::class', 'destroy']);
+Route::get('/get/subscriber', [SubscriberController::class, 'index']);
+Route::post('/post/subscriber', [SubscriberController::class, 'store']);
+Route::delete('/delete/subscriber/{id}', [SubscriberController::class, 'destroy']);
 
-Route::get('/get/mailinglist', ['MailingListController::class', 'index']);
-Route::post('/post/mailinglist', ['MailingListController::class', 'store']);
-Route::delete('/delete/mailinglist/{id}', ['MailingListController::class', 'destroy']);
+Route::get('/get/mailinglist', [MailingListController::class, 'index']);
+Route::post('/post/mailinglist', [MailingListController::class, 'store']);
+Route::delete('/delete/mailinglist/{id}', [MailingListController::class, 'destroy']);
