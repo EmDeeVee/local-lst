@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+// use Illuminate\Support\Facades\App;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Models\Subscriber;
@@ -18,9 +19,9 @@ class SubscriberController extends Controller
     public function store(Request $request){
         $validData = $request->validate([
             'name' => 'required|max:255',
-            'email' => 'required|email',
+            'email' => 'required|email:rfc,dns',
             'gender' => 'required',
-            'mailing_list_id' => 'required|numeric' 
+            'mailing_list_id' => 'required|integer|gte:0' 
         ]);
 
         $subscriber = new Subscriber([
@@ -34,6 +35,5 @@ class SubscriberController extends Controller
 
         return response()->json($subscriber, Response::HTTP_CREATED);
     }
-
     
 }
