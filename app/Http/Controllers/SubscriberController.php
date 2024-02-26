@@ -19,7 +19,7 @@ class SubscriberController extends Controller
         $validData = $request->validate([
             'name' => 'required|max:255',
             'email' => 'required|email',
-            'gender' => 'requred',
+            'gender' => 'required',
             'mailing_list_id' => 'required|numeric' 
         ]);
 
